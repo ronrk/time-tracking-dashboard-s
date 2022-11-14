@@ -33,12 +33,14 @@ html {
 body {
   font-family: var(--def-font);
   background-color: var(--very-dark-blue);
+  height: 100vh;
+  width: 100vw;
+  min-width: 100%;
 }
 
 main {
   margin-top: 10rem;
-  height: 100%;
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,6 +107,7 @@ main {
   border: none;
   color: var(--pale-blue);
   opacity: 0.3;
+  text-transform: capitalize;
   cursor: pointer;
 }
 
@@ -119,7 +122,7 @@ main {
 }
 
 .data-box {
-  width: 30%;
+  width: 30.3%;
   padding: 1rem;
   color: var(--pale-blue);
   cursor: pointer;
@@ -214,4 +217,25 @@ main {
   display: block;
   width: 10rem;
   height: 10rem;
+}
+
+@media screen and (max-width: 825px) {
+  main {
+    flex-direction: column;
+  }
+  .user-box {
+    width: 90%;
+  }
+  .data-container {
+    justify-content: center;
+  }
+  .data-box {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .data-box {
+    width: 90%;
+  }
 }

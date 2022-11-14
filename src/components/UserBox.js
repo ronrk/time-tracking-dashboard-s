@@ -1,7 +1,17 @@
 import React from "react";
 import userImg from "../assets/images/image-jeremy.png";
 
-const UserBox = () => {
+const UserBox = ({ onChange, time }) => {
+  const timeValues = ["daily", "weekly", "monthly"];
+  const btns = timeValues.map((item, i) => {
+    return (
+      <li key={i}>
+        <button className={item === time ? "active" : ""} onClick={onChange}>
+          {item}
+        </button>
+      </li>
+    );
+  });
   return (
     <div className="user-box">
       <div className="user-content">
@@ -12,15 +22,18 @@ const UserBox = () => {
       </div>
       <div className="user-time">
         <ul>
-          <li>
-            <button className="active">Daily</button>
+          {btns}
+          {/*  <li>
+            <button className="active" onClick={onChange}>
+              Daily
+            </button>
           </li>
           <li>
-            <button>Weekley</button>
+            <button onClick={onChange}>Weekly</button>
           </li>
           <li>
-            <button>Monthly</button>
-          </li>
+            <button onClick={onChange}>Monthly</button>
+          </li> */}
         </ul>
       </div>
     </div>
